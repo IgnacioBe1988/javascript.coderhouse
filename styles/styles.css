@@ -1,3 +1,26 @@
 body {
-  background-color: #fbcb05;
+  background-color: #fbcb05 !important;
+  height: 100vh;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: underline double;
+}
+
+.cuerpo_principal {
+  height: 100%;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: underline double;
+}
+
+.carrito table head tr td img {
+  size: 50px;
 }

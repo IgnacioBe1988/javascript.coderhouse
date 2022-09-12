@@ -1,76 +1,55 @@
-// Variables
-const productos = [
-  {
-    id: 1,
-    name: "Estatuilla pequeña",
-    valor: 1500,
-  },
-  {
-    id: 2,
-    name: "Estatuilla mediana",
-    valor: 1750,
-  },
-  {
-    id: 3,
-    name: "Molde",
-    valor: 1250,
-  },
-  {
-    id: 4,
-    name: "Estatuilla grande",
-    valor: 2000,
-  },
-  {
-    id: 5,
-    name: "Abrojos",
-    valor: 950,
-  },
-];
+let btn_compra = document.querySelectorAll(".botonCompra");
+console.log(btn_compra);
 
-const contenedorProductos = document.querySelector("#contenedor-comidas");
-const listadoFavoritos = [];
-
-// Eventos
-document.addEventListener("DOMContentLoaded", function () {
-  //Mostrar nuestros productos
-  mostrarProductos();
-});
-
-// Funciones
-function mostrarProductos() {
-  productos.forEach(function (producto) {
-    const divProducto = document.createElement("div");
-    divProducto.classList.add("card");
-
-    const tituloProducto = document.createElement("h2");
-    tituloProducto.textContent = producto.name;
-    tituloProducto.classList.add("titulo-comida");
-
-    const btnConsulta = document.createElement("button");
-    btnConsulta.textContent = "Consultar precio";
-    btnConsulta.classList.add("btn-favorito");
-    // EVENTO BOTON
-    btnConsulta.onclick = function () {
-      agregarFavorito(producto.id);
-    };
-
-    //CARD
-    divProducto.appendChild(tituloProducto);
-    divProducto.appendChild(btnConsulta);
-
-    //DOM
-    contenedorProductos.appendChild(divProducto);
-  });
+for (let boton of btn_compra) {
+  boton.addEventListener("click", agregar_a_carrito);
 }
 
-function agregarFavorito(id) {
-  let comidaEncontrada = productos.find(function (comida) {
-    return comida.id === id;
-  });
-  console.log(
-    "El precio del producto",
-    comidaEncontrada.name,
-    "es de",
-    comidaEncontrada.valor
-  );
+let carrito = [];
+
+function agregar_a_carrito(e) {
+  let hijo = e.target;
+  let padre = hijo.parentNode;
+  let abuelo = padre.parentNode;
+
+  let nombre_prodcuto = padre.querySelector("h5").textContent;
+  let precio = padre.querySelector("span").textContent;
+  let img = abuelo.querySelector("img").src;
+
+  let producto = {
+    nombre: nombre_prodcuto,
+    img: img,
+    precio: precio,
+    cantidad: 1,
+  };
+
+  carrito.push(producto);
+
+  let arreglo_JSON = JSON.stringify(carrito);
+  localStorage.setItem("carrito", arreglo_JSON);
+
+  mostrar_carrito(producto);
+}
+
+function mostrar_carrito(producto) {
+  let fila = document.createElement("tr");
+
+  fila.innerHTML = `<td><img src="${producto.img}"></td>
+  <td>${producto.cantidad}</td>
+  <td>${producto.precio}</td>
+  <td><button class="btn-danger borrar_elemento">Borrar</button></td>`;
+
+  let tabla = document.getElementById("tbody");
+  tabla.append(fila);
+
+  let botones_borrar = document.querySelectorAll(".borrar_elemento");
+
+  for (let boton of botones_borrar) {
+    boton.addEventListener("click", borrar_producto);
+  }
+}
+
+function borrar_producto(e) {
+  let abuelo = e.target.parentNode.parentNode;
+  abuelo.remove();
 }

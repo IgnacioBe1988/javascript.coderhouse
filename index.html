@@ -6,27 +6,131 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/styles.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
     <title>Indexador de productos</title>
 </head>
 
 <body>
 
-    <body>
-        <header>
-            <div class="contenedor">
-                <h1 class="titulo">Impresiones 3d</h1>
-            </div>
-        </header>
+    <header>
+        <h1>PrintOrama 3D</h1>
+    </header>
 
-        <main class="contenedor">
-            <div id="contenedor-comidas">
+    <div id="contenedorPadre">
+        <div class="container" id="listaProductos">
+
+            <h2>Catalogo</h2>
+            <div class="row">
+                <div class="col">
+                    <div class="card" style="width: 90%;">
+                        <img src="./imagenes/alien.JPG" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Alien</h5>
+                            <p class="card-text">Estatuilla de "Alien", una de las sagas cinematográficas de
+                                ciencia ficción y terror mas famosas.</p>
+                            <span class="precio">$9800</span>
+                            <a href="#" class="btn btn-primary botonCompra">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 90%;">
+                        <img src="./imagenes/arnold.JPG" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Arnold</h5>
+                            <p class="card-text">Modelo tomado de la pelicula "Comando" de Arnold Schwarzenegger.</p>
+                            <span class="precio">$7500</span>
+                            <a href="#" class="btn btn-primary botonCompra">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 90%;">
+                        <img src="./imagenes/bebop.JPG" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Bebop</h5>
+                            <p class="card-text">Reconocido personaje de la serie de dibujos animaods "Las Tortugas
+                                Ninjas".</p>
+                            <span class="precio">$5400</span>
+                            <a href="#" class="btn btn-primary botonCompra">Comprar</a>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <div class="card" style="width: 90%;">
+                        <img src="./imagenes/boys.JPG" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Boys</h5>
+                            <p class="card-text">Modelo del superhéroe "El Patriota" de la famosa serie "The Boys".</p>
+                            <span class="precio">$8500</span>
+
+                            <a href="#" class="btn btn-primary botonCompra">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 90%;">
+                        <img src="./imagenes/groot.JPG" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Groot</h5>
+                            <p class="card-text">Estatuilla pequeña del personaje "Groot" de la saga de peliculas "Los
+                                Guardianes de la Galaxia".</p>
+                            <span class="precio">$3500</span>
+                            <a href="#" class="btn btn-primary botonCompra">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 90%;">
+                        <img src="./imagenes/jurassic.JPG" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Jurassic</h5>
+                            <p class="card-text">Tiranosaurio Rex del clasico del cine "Jusrassic Park", diriga por
+                                Steven Spielberg.</p>
+                            <span class="precio">$9100</span>
+                            <a href="#" class="btn btn-primary botonCompra">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
 
             </div>
-        </main>
+        </div>
+        <div class="container" id="carrito">
+            <h2>Carrito</h2>
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <td>Producto</td>
+                        <td>Cantidad</td>
+                        <td>Precio</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
 
-        <script src="./js/main.js"></script>
-    </body>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+
+
+    <footer>
+        <h4>Ignacio Rinaldi</h4>
+    </footer>
+
+    <script src="./js/main.js"></script>
 </body>
 
 
