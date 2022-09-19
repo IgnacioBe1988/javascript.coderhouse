@@ -24,3 +24,7 @@ footer {
 .carrito table head tr td img {
   size: 50px;
 }
+
+.imagen_carrito {
+  max-width: 20%;
+}

@@ -34,7 +34,7 @@ function agregar_a_carrito(e) {
 function mostrar_carrito(producto) {
   let fila = document.createElement("tr");
 
-  fila.innerHTML = `<td><img src="${producto.img}"></td>
+  fila.innerHTML = `<td><img src="${producto.img}" class="imagen_carrito"></td>
   <td>${producto.cantidad}</td>
   <td>${producto.precio}</td>
   <td><button class="btn-danger borrar_elemento">Borrar</button></td>`;
@@ -51,5 +51,9 @@ function mostrar_carrito(producto) {
 
 function borrar_producto(e) {
   let abuelo = e.target.parentNode.parentNode;
+  Swal.fire({
+    icon: "success",
+    text: "El producto se elimino correctamente",
+  });
   abuelo.remove();
 }
