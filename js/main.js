@@ -18,7 +18,7 @@ function agregar_a_carrito(e) {
 
   let producto = {
     nombre: nombre_prodcuto,
-    img: img,
+    img,
     precio: precio,
     cantidad: 1,
   };
@@ -57,3 +57,23 @@ function borrar_producto(e) {
   });
   abuelo.remove();
 }
+
+// FETCH DEL DESAFIO
+
+let contenedor = document.getElementById("clima");
+let ciudad = "Buenos";
+
+fetch(
+  "https://api.openweathermap.org/data/2.5/weather?q=" +
+    ciudad +
+    "&lang=es&units=metric&appid=bbf8893c6e8030e157bb633d11a66e17"
+)
+  .then((response) => response.json())
+  .then((data) => {
+    contenedor.innerHTML = `<span> Cuidad: ${data.name}</span>
+                            <span> Temp: ${data.main.temp}</span>`;
+  });
+
+fetch("productos.json")
+  .then((response) => response.json())
+  .then((data) => console.log(data));
