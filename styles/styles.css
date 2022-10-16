@@ -18,19 +18,30 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  text-decoration: overline;
+  margin-top: 3rem;
 }
 
-.carrito table head tr td img {
-  size: 50px;
+.tabla {
+  background-color: aqua;
 }
 
 .imagen_carrito {
   max-width: 20%;
+  display: flex;
 }
 
 .imagen_tarjeta {
   width: 100%;
   height: 500px;
   object-fit: cover;
+}
+
+.titulo_separador {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-decoration: underline;
+  font-size: 60px;
 }
